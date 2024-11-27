@@ -11,7 +11,7 @@ public class ApplicationRunner {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
-        System.out.println(context.getBean("p1"));
-        System.out.println(context.getBean("p2"));
+        var connectionPool = context.getBean("p1");
+        System.out.println(connectionPool);
     }
 }
