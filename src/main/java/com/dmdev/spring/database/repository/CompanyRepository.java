@@ -5,13 +5,15 @@ import com.dmdev.spring.bpp.Transaction;
 import com.dmdev.spring.database.entity.Company;
 import com.dmdev.spring.database.pool.ConnectionPool;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Transaction
 @Auditing
 public class CompanyRepository implements CrudRepository<Integer, Company> {
