@@ -29,7 +29,18 @@ public class ApplicationConfiguration {
         }
 
         @Bean
+        @Scope(BeanDefinition.SCOPE_SINGLETON)
+        public ConnectionPool pool3() {
+                return new ConnectionPool("test-pool", 25);
+        }
+
+        @Bean
         public UserRepository userRepository2(ConnectionPool pool2) {
                 return new UserRepository(pool2);
+        }
+
+        @Bean
+        public UserRepository userRepository3() {
+                return new UserRepository(pool3());
         }
 }
