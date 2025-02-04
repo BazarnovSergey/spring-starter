@@ -5,24 +5,21 @@ import com.dmdev.spring.database.repository.CrudRepository;
 import com.dmdev.spring.dto.CompanyReadDto;
 import com.dmdev.spring.listener.entity.AccessType;
 import com.dmdev.spring.listener.entity.EntityEvent;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class CompanyService {
 
+    @Qualifier("companyRepository")
     private final CrudRepository<Integer, Company> companyRepository;
     private final UserService userService;
     private final ApplicationEventPublisher applicationEventPublisher;
-
-    public CompanyService(CrudRepository<Integer, Company> companyRepository, UserService userService,
-                          ApplicationEventPublisher applicationEventPublisher) {
-        this.companyRepository = companyRepository;
-        this.userService = userService;
-        this.applicationEventPublisher = applicationEventPublisher;
-    }
 
     public Optional<CompanyReadDto> findById(Integer id) {
         return companyRepository.findById(id)
