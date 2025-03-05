@@ -2,7 +2,7 @@ package com.dmdev.spring.integration.service;
 
 import com.dmdev.spring.config.DatabaseProperties;
 import com.dmdev.spring.dto.CompanyReadDto;
-import com.dmdev.spring.integration.annotation.IT;
+import com.dmdev.spring.integration.IntegrationTestBase;
 import com.dmdev.spring.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -10,9 +10,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@IT
 @RequiredArgsConstructor
-public class CompanyServiceIT {
+public class CompanyServiceIT extends IntegrationTestBase {
 
     private static final Integer COMPANY_ID = 1;
 
