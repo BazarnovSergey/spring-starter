@@ -1,0 +1,6 @@
+2025-02-05 07:58:52.875  INFO 3712 --- [main] c.d.spring.database.pool.ConnectionPool  : Init connection pool
+2025-02-05 07:58:52.890  INFO 3712 --- [main] c.d.spring.database.pool.ConnectionPool  : Init connection pool
+2025-02-05 07:58:52.891  INFO 3712 --- [main] c.d.spring.database.pool.ConnectionPool  : Init connection pool
+2025-02-05 07:58:52.981  INFO 3712 --- [SpringApplicationShutdownHook] c.d.spring.database.pool.ConnectionPool  : Clean connection pool
+2025-02-05 07:58:52.981  INFO 3712 --- [SpringApplicationShutdownHook] c.d.spring.database.pool.ConnectionPool  : Clean connection pool
+2025-02-05 07:58:52.981  INFO 3712 --- [SpringApplicationShutdownHook] c.d.spring.database.pool.ConnectionPool  : Clean connection pool
