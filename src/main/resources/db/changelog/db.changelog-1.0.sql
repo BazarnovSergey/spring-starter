@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS company
 --changeset sbazarnov:2
 CREATE TABLE IF NOT EXISTS company_locales
 (
-    company_id INT REFERENCES company (id),
+    company_id INT REFERENCES company (id) ON DELETE CASCADE,
     lang VARCHAR(2),
     description VARCHAR(255) NOT NULL ,
     PRIMARY KEY (company_id, lang)
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS users
     firstname VARCHAR(64),
     lastname VARCHAR(64),
     role VARCHAR(32),
-    company_id INT REFERENCES users (id)
+    company_id INT REFERENCES company (id)
     );
 --rollback DROP TABLE company;
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS payment
 (
     id BIGSERIAL PRIMARY KEY ,
     amount INT NOT NULL ,
-    receiver_id BIGINT NOT NULL REFERENCES users (id)
+    receiver_id BIGINT NOT NULL REFERENCES users (id) ON DELETE CASCADE
     );
 --rollback DROP TABLE payment;
 
@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS chat
 CREATE TABLE IF NOT EXISTS users_chat
 (
     id BIGSERIAL PRIMARY KEY ,
-    user_id BIGINT NOT NULL REFERENCES users (id),
-    chat_id BIGINT NOT NULL REFERENCES chat (id),
+    user_id BIGINT NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    chat_id BIGINT NOT NULL REFERENCES chat (id) ON DELETE CASCADE,
     UNIQUE (user_id, chat_id)
     );
 --rollback DROP TABLE users_chat;
