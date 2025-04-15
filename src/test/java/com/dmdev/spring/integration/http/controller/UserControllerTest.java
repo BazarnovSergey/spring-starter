@@ -6,11 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static com.dmdev.spring.dto.UserCreateEditDto.Fields.companyId;
-import static com.dmdev.spring.dto.UserCreateEditDto.Fields.firstname;
-import static com.dmdev.spring.dto.UserCreateEditDto.Fields.lastname;
-import static com.dmdev.spring.dto.UserCreateEditDto.Fields.role;
-import static com.dmdev.spring.dto.UserCreateEditDto.Fields.username;
+import static com.dmdev.spring.dto.UserCreateEditDto.Fields.*;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -42,7 +38,7 @@ class UserControllerTest extends IntegrationTestBase {
                                 .param(lastname, "TestTest")
                                 .param(role, "ADMIN")
                                 .param(companyId, "1")
-//                        .param(birthDate, "2000-01-01")
+                                .param(birthDate, "2000-01-01")
                 )
                 .andExpectAll(
                         status().is3xxRedirection(),
