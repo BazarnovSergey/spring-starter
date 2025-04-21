@@ -2,6 +2,7 @@ package com.dmdev.spring.http.controller;
 
 import com.dmdev.spring.database.entity.Role;
 import com.dmdev.spring.dto.UserCreateEditDto;
+import com.dmdev.spring.dto.UserFilter;
 import com.dmdev.spring.service.CompanyService;
 import com.dmdev.spring.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -21,9 +22,9 @@ public class UserController {
     private final CompanyService companyService;
 
     @GetMapping
-    public String findAll(Model model) {
+    public String findAll(Model model, UserFilter userFilter) {
 //        model.addAttribute("users", userService.findAll(filter));
-        model.addAttribute("users", userService.findAll());
+        model.addAttribute("users", userService.findAll(userFilter));
         return "user/users";
     }
 
