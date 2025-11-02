@@ -60,7 +60,7 @@ class UserRepositoryTest extends IntegrationTestBase {
 
     @Test
     void checkPageable() {
-        var pageable = PageRequest.of(0, 2, Sort.by("id"));
+        var pageable =   PageRequest.of(0, 2, Sort.by("id"));
         var slice = userRepository.findAllBy(pageable);
         slice.forEach(user -> System.out.println(user.getCompany().getName()));
 

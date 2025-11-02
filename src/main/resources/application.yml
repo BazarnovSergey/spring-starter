@@ -1,8 +1,8 @@
 db:
   username: ${username.value:postgres}
-  password: pass
+  password: password
   driver: PostgresDriver
-  url: postgres:5432
+  url: postgres:5433
   hosts: localhost,127.0.0.1
   properties:
     first: 123
@@ -35,8 +35,8 @@ spring:
     format:
       date: iso
   datasource:
-    url: jdbc:postgresql://localhost:5433/postgres
-    username: postgres
+    url: jdbc:postgresql://localhost:5433/mydb
+    username: user
     password: password
     driver-class-name: org.postgresql.Driver
   jpa:
