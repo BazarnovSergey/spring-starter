@@ -5,7 +5,6 @@ import org.hibernate.envers.Audited;
 import org.hibernate.envers.NotAudited;
 import org.hibernate.envers.RelationTargetAuditMode;
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,6 +36,8 @@ public class User extends AuditingEntity<Long> {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    private String image;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
