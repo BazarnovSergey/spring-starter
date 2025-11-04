@@ -14,6 +14,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.history.RevisionRepository;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.LockModeType;
@@ -68,6 +69,8 @@ public interface UserRepository extends
             "WHERE company_id = :companyId",
             nativeQuery = true)
     List<PersonalInfo2> findAllByCompanyId(Integer companyId);
+
+    Optional<User> findByUsername(String username);
 }
 
 
