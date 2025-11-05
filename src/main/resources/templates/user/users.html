@@ -5,19 +5,20 @@
     <title>Users</title>
 </head>
 <body>
+<div th:insert="~{fragment :: header}"></div>
 <form action="/users">
     <label for="firstname">Firstname:
         <input id="firstname" type="text" name="firstname" th:value="${filter.firstname()}">
     </label>
     <label for="lastname">Lastname:
-        <input id="lastname" type= "text" name="lastname" th:value="${filter.lastname()}">
+        <input id="lastname" type="text" name="lastname" th:value="${filter.lastname()}">
     </label>
     <label for="birthDate">Birthdate:
         <input id="birthDate" type="date" name="birthDate" th:value="${filter.birthDate()}">
     </label>
     <div>
         <label for="page">Page:
-            <input id="page" type= "number" name="page" th:value="${users.metadata.page}">
+            <input id="page" type="number" name="page" th:value="${users.metadata.page}">
         </label>
         <label for="size">Size:
             <input id="size" type="number" name="size" th:value="${users.metadata.size}">
